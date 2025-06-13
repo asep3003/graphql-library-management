@@ -15,6 +15,22 @@ const books = [
     category: "Self-Help",
     total: 10,
   },
+  {
+    id: "3",
+    title: "The Power of Now",
+    author: "Eckhart Tolle",
+    published_at: "2006-10-01",
+    category: "Self-Help",
+    total: 10,
+  },
+  {
+    id: "4",
+    title: "The Power of Habit",
+    author: "Charles Duhigg",
+    published_at: "2009-10-01",
+    category: "Self-Help",
+    total: 10,
+  },
 ];
 
 const members = [
@@ -27,8 +43,20 @@ const members = [
   {
     id: "2",
     name: "Mochamad Adiel Bawana",
-    email: "adielbwn9@gmail.com",
+    email: "adielbwn912@gmail.com",
     verified: false,
+  },
+  {
+    id: "3",
+    name: "Mochamad Aditya",
+    email: "aditya133@gmail.com",
+    verified: true,
+  },
+  {
+    id: "4",
+    name: "Anggana Putra",
+    email: "angganaputra9@gmail.com",
+    verified: true,
   },
 ];
 
