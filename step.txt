@@ -1,0 +1,5 @@
+# SETUP PROJECT
+setup type project nodejs nya sebagai modul
+
+# INSTALASI PACKAGE APOLLO
+npm i apollo@16.8.1 @apollo/server@4.10.4
