@@ -1,13 +1,19 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
-import { books, lendings, members } from "./_db.js";
+import { authors, books, lendings, members } from "./_db.js";
 
 const typeDefs = `#graphql
+  type Author {
+    id: ID!
+    name: String!
+    books: [Book!]
+  }
+
   type Book {
     id: ID!
     title: String!
-    author: String!
+    author: Author!
     published_at: String!
     category: String!
     total: Int!
@@ -31,6 +37,8 @@ const typeDefs = `#graphql
   }
 
   type Query {
+    authors: [Author!]!
+    author(id: ID!): Author!
     books: [Book!]!
     book(id: ID!): Book!
     members: [Member!]!
@@ -42,6 +50,12 @@ const typeDefs = `#graphql
 
 const resolvers = {
   Query: {
+    authors: () => {
+      return authors;
+    },
+    author: (_, args) => {
+      return authors.find((author) => author.id === args.id);
+    },
     books: () => {
       return books;
     },
@@ -61,9 +75,17 @@ const resolvers = {
       return lendings.find((lending) => lending.id === args.id);
     },
   },
+  Author: {
+    books(parent) {
+      return books.filter((book) => book.author_id === parent.id);
+    },
+  },
   Book: {
     lendings(parent) {
       return lendings.filter((lending) => lending.book_id === parent.id);
+    },
+    author(parent) {
+      return authors.find((author) => author.id === parent.author_id);
     },
   },
   Member: {

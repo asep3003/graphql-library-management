@@ -1,8 +1,27 @@
+const authors = [
+  {
+    id: "author-1",
+    name: "James Clear",
+  },
+  {
+    id: "author-2",
+    name: "Mark Manson",
+  },
+  {
+    id: "author-3",
+    name: "Eckhart Tolle",
+  },
+  {
+    id: "author-4",
+    name: "Charles Duhigg",
+  },
+];
+
 const books = [
   {
     id: "book-1",
     title: "Atomic Habits",
-    author: "James Clear",
+    author_id: "author-1",
     published_at: "2018-10-16",
     category: "Self-Help",
     total: 10,
@@ -10,7 +29,7 @@ const books = [
   {
     id: "book-2",
     title: "The Subtle Art of Not Giving a F*ck",
-    author: "Mark Manson",
+    author_id: "author-2",
     published_at: "2016-09-13",
     category: "Self-Help",
     total: 10,
@@ -18,7 +37,7 @@ const books = [
   {
     id: "book-3",
     title: "The Power of Now",
-    author: "Eckhart Tolle",
+    author_id: "author-3",
     published_at: "2006-10-01",
     category: "Self-Help",
     total: 10,
@@ -26,7 +45,7 @@ const books = [
   {
     id: "book-4",
     title: "The Power of Habit",
-    author: "Charles Duhigg",
+    author_id: "author-4",
     published_at: "2009-10-01",
     category: "Self-Help",
     total: 10,
@@ -77,4 +96,4 @@ const lendings = [
   },
 ];
 
-export { books, members, lendings };
+export { authors, books, members, lendings };
